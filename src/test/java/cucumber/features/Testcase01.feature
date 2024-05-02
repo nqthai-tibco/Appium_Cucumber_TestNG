@@ -11,3 +11,8 @@ Feature: Test Search on app and on web
   Scenario: Search on Webs
       Given  I connect to vnexpress by chrome on devices "emulator-5554"
 
+    And I search article about "Nhà khoa học nữ giải nobel"
+
+    Then I verify article include information as table below
+      |Name article|Description|Name Aught|
+

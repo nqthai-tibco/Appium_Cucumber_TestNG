@@ -19,4 +19,17 @@ public class FirstScreen extends BaseScreen{
     public void clickToText(String text) {
         waitAndClick(By.xpath("//*[@text='"+text+"']"));
     }
+
+    public void clickButtonSearch() {
+        waitAndClick(By.xpath("//*[@class='btn_control_menu']//*[@class='ic ic-home']"));
+    }
+
+    public void inputSearchWithValue(String article) {
+        waitAndFindElement(By.xpath("//*[@id='auto_search_textbox']")).sendKeys(article);
+
+    }
+
+    public void clickButtonSearchWeb() {
+        waitAndFindElement(By.xpath("//*[@od='auto_search_button']")).click();
+    }
 }

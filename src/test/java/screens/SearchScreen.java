@@ -21,4 +21,9 @@ public class SearchScreen extends BaseScreen{
     public void clickToCourse(String nameCourse) {
         waitAndClick(By.xpath("//android.widget.TextView[@text='"+nameCourse+"']"));
     }
+
+    public void clickToTextContains(String article) {
+        waitAndClick(By.xpath("//*[contains(text(),'"+article+"')]"));
+
+    }
 }

@@ -19,4 +19,12 @@ public class SearchSteps extends BaseSteps {
         searchScreen.clickToCourse(nameCourse);
 
         }
+
+    @And("I search article about {string}")
+    public void iSearchArticleAbout(String article) {
+        firstScreen.clickButtonSearch();
+        firstScreen.inputSearchWithValue(article);
+        firstScreen.clickButtonSearchWeb();
+        searchScreen.clickToTextContains(article);
+    }
 }
