@@ -16,7 +16,7 @@ import org.testng.annotations.Test;
     glue = "cucumber.steps",
     publish = true
 )
-public class TestRunner extends BaseTest {
+public class TestRunner  {
     private TestNGCucumberRunner testNGCucumberRunner;
 
     @BeforeClass(alwaysRun = true)

@@ -11,12 +11,12 @@ import org.testng.annotations.Test;
 
 @CucumberOptions(
         monochrome = true,
-        tags = "@Test02",
+        tags = "@SearchOnWeb",
         features = "src/test/java/cucumber/features",
         glue = "cucumber.steps",
         publish = true
 )
-public class TestRunner2 extends BaseTest {
+public class TestRunner2  {
     private TestNGCucumberRunner testNGCucumberRunner;
 
     @BeforeClass(alwaysRun = true)

@@ -1,0 +1,21 @@
+package cucumber.steps;
+
+import io.appium.java_client.android.AndroidDriver;
+import io.cucumber.java.en.Given;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import utilities.DesiredCapabilitiesUtil;
+import utilities.ThreadLocalDriver;
+
+import java.net.MalformedURLException;
+import java.net.URL;
+
+public class ConnectWebs {
+    @Given("I connect to vnexpress by chrome on devices {string}")
+    public void iConnectToVnexpressByChromeOnDevices(String emulator) throws MalformedURLException {
+        DesiredCapabilitiesUtil desiredCapabilitiesUtil = new DesiredCapabilitiesUtil();
+        DesiredCapabilities capabilities=desiredCapabilitiesUtil.getDesCapBrowser(emulator);
+        ThreadLocalDriver.setTLDriver(new AndroidDriver<>(new URL("http://0.0.0.0:4723/wd/hub"),capabilities));
+        ThreadLocalDriver.getTLDriver().get("https://vnexpress.net/");
+
+    }
+}

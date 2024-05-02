@@ -3,24 +3,25 @@ package utilities;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 public class DesiredCapabilitiesUtil {
-    public DesiredCapabilities getDesiredCapabilities(String udid, String appPackage,String appActivity) {
+    public DesiredCapabilities getDesCapBrowser(String udid) {
         DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
         desiredCapabilities.setCapability("udid", udid);
         desiredCapabilities.setCapability("platformName", "Android");
-        desiredCapabilities.setCapability("appPackage", appPackage);
-        desiredCapabilities.setCapability("appActivity", appActivity);
-        desiredCapabilities.setCapability("skipUnlock", "true");
-        desiredCapabilities.setCapability("noReset", "false");
+        desiredCapabilities.setCapability("browserName", "Browser");
+        desiredCapabilities.setCapability("chromedriverExecutable",System.getProperty("user.dir")+"\\src\\driver\\chromedriver124.exe");
         return desiredCapabilities;
     }
-    public DesiredCapabilities getDesiredCapabilities2(String udid) {
+
+
+    public DesiredCapabilities getDesCapAppCours(String emulator) {
         DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
-        desiredCapabilities.setCapability("udid", udid);
+        desiredCapabilities.setCapability("udid", emulator);
         desiredCapabilities.setCapability("platformName", "Android");
-        desiredCapabilities.setCapability("appPackage", "fr.playsoft.vnexpress");
-        desiredCapabilities.setCapability("appActivity", "fr.playsoft.vnexpress.ActivityMain");
+        desiredCapabilities.setCapability("appPackage", "org.coursera.android");
+        desiredCapabilities.setCapability("appActivity", "org.coursera.android.MainActivity");
         desiredCapabilities.setCapability("skipUnlock", "true");
         desiredCapabilities.setCapability("noReset", "false");
         return desiredCapabilities;
+
     }
 }

@@ -9,35 +9,35 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class BaseScreen {
-    protected AndroidDriver<MobileElement> driver;
-    protected WebDriverWait                wait;
+    public AndroidDriver<MobileElement> driver;
+    public WebDriverWait                wait;
 
     public BaseScreen(AndroidDriver<MobileElement> driver) {
         this.driver = driver;
-        wait = new WebDriverWait(driver, 15);
+        wait = new WebDriverWait(driver, 30);
     }
 
-    protected void waitAndClick(By by) { wait.until(ExpectedConditions.visibilityOfElementLocated(by)).click(); }
+    public void waitAndClick(By by) { wait.until(ExpectedConditions.visibilityOfElementLocated(by)).click(); }
 
-    protected void click(By by) {
+    public void click(By by) {
         driver.findElement(by).click();
     }
 
-    protected void hideKeyboard() { driver.navigate().back(); }
+    public void hideKeyboard() { driver.navigate().back(); }
 
-    protected List<WebElement> waitAndFindElements(By by) {
-        return wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(by));
+    public List<MobileElement> waitAndFindElements(By by) {
+        return driver.findElements(by);
     }
 
-    protected WebElement waitAndFindElement(By by) {
+    public WebElement waitAndFindElement(By by) {
         return wait.until(ExpectedConditions.visibilityOfElementLocated(by));
     }
 
-    protected String getText(By by) {
+    public String getText(By by) {
         return waitAndFindElement(by).getText();
     }
 
-    protected void sendKey(By by, String text) {
+    public void sendKey(By by, String text) {
         waitAndFindElement(by).sendKeys(text);
     }
 }
