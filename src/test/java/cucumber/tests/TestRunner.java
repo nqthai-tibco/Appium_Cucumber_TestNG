@@ -11,7 +11,7 @@ import org.testng.annotations.Test;
 
 @CucumberOptions(
     monochrome = true,
-    tags = "@Test01",
+    tags = "@SearchOnApp",
     features = "src/test/java/cucumber/features",
     glue = "cucumber.steps",
     publish = true

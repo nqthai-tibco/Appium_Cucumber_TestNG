@@ -8,7 +8,7 @@ public class DesiredCapabilitiesUtil {
         desiredCapabilities.setCapability("udid", udid);
         desiredCapabilities.setCapability("platformName", "Android");
         desiredCapabilities.setCapability("browserName", "Chrome");
-        desiredCapabilities.setCapability("chromedriverExecutable",System.getProperty("user.dir")+"\\src\\driver\\chromedriver124.exe");
+//        desiredCapabilities.setCapability("chromedriverExecutable",System.getProperty("user.dir")+"\\src\\driver\\chromedriver124.exe");
         return desiredCapabilities;
     }
 
