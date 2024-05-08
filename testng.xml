@@ -8,9 +8,4 @@
             <class name="cucumber.tests.TestRunner"/>
         </classes>
     </test>
-    <test name="emulator-5556">
-        <classes>
-            <class name="cucumber.tests.TestRunner2"/>
-        </classes>
-    </test>
 </suite>
